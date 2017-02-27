@@ -10,7 +10,7 @@ ipfs = IpfsAPI('localhost', '5001', {protocol: 'http'});
   Meteor.methods({
 
     "ipfsAdd": function(addThis){
-        var result = ipfs.util.addFromFs('/home/eruguru/project-new/client/IPFSLibrary/quasar.jpg');
+        var result = ipfs.util.addFromFs('/home/eruguru/CreativeCommonPlace/client/IPFSLibrary/quasar.jpg');
         // ipfs.util.addFromFs(addThis);
         return (result);
         },
