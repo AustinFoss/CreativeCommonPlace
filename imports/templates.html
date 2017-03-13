@@ -1,33 +1,42 @@
 <Template name='newCreatorID'>
+  <!-- Creates a new Creator contract on Ethereum  -->
   <a href="#" class="button" id="newCreatorID">New Creator ID</a>
 </Template>
 
 <Template name='connectToCreator'>
-    <input type='search' maxlength=42 id='etherSearch' placeholder="Search by Ethereum Address" />
-    <a href="#" class="button" id="searchForIDs">Search</a>
-    <select id='selectID'>
-      <option id='default' selected>Select a Creator ID</option>
-      {{#each ID in TemplateVar.get 'IDresults'}}
-        <option class="IDs">{{ID}}</option>
-      {{/each}}
-    </select>
-    <a href="#" class="button" id="connectToCreator">Open Creator Portfolio</a>
-    <table class='portfolio'>
-      <tr class='IP'>
-        <td class='FileHash'>File Hash</td>
-        <td class='DistLicense'>Distribution License</td>
-      </tr>
-      {{#each IP in TemplateVar.get 'IPs'}}
-        <tr class='IP'>
-          <td class='FlieHash'>{{IP.ContentHash}}</td>
-          <td class='DistLicense'>{{IP.DistLicense}}</td>
-        </tr>
-      {{/each}}
-    </table>
+  <!-- Searches for a Creator contract Address by the Creator's Ethereum Address -->
+  <input type='search' maxlength=42 id='etherSearch' placeholder="Search by Ethereum Address" />
+  <a href="#" class="button" id="searchForIDs">Search</a>
+
+  <!-- Outputs search results as a list of Contract Addresses-->
+  <select id='selectID'>
+    <option id='default' selected>Select a Creator ID</option>
+    {{#each ID in TemplateVar.get 'IDresults'}}
+      <option class="IDs">{{ID}}</option>
+    {{/each}}
+  </select>
+  <!-- Connects to the selected contract address -->
+  <a href="#" class="button" id="connectToCreator">Open Creator Portfolio</a>
+
+  <!-- Gives a list of all intellectual property owned by this creator contract -->
+  <table class='portfolio'>
+    <tr class='IP'>
+      <td class='FileHash'>File Hash</td>
+      <td class='DistLicense'>Distribution License</td>
+    </tr>
+    {{#each IP in TemplateVar.get 'IPs'}}
+    <tr class='IP'>
+      <td class='FlieHash'>{{IP.ContentHash}}</td>
+      <td class='DistLicense'>{{IP.DistLicense}}</td>
+    </tr>
+    {{/each}}
+  </table>
 </Template>
 
 <Template name='Publish'>
+  <!-- Input a string of information to be hashed -->
   <input type="text" id="publishThis" placeholder="Enter Data">
+  <!-- Select a distribution license to be attached to the hash -->
   <select id="DistLicense">
     <option selected>Choose One</option>
     <option value="CC">Creative Commons</option>
@@ -37,9 +46,9 @@
 </Template>
 
 <Template name='ipfsAdd'>
-  <form>
-    <INPUT type="file" id="ipfs_add_file">
-  </form>
+  <!-- Select a file to be shared over IPFS -->
+  <INPUT type="file" id="ipfs_add_file">
   <a href="#" class="button" id="ipfsButton">Share File</a>
-  <p><a id='ipfsLink' href="#">Link to Creation</a></p>
+  <!-- An IPFS gateway link accessible through any browwser -->
+  <a id='ipfsLink' href="#">Link to Creation</a>
 </Template>

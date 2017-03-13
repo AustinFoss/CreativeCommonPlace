@@ -1,3 +1,5 @@
+//This page is only for IPFS testing
+//The goal is to have no server side code
 import { Meteor } from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import '../imports/ipfsPaths.js';
