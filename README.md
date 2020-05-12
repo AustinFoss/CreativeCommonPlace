@@ -1,5 +1,7 @@
 # CreativeCommonPlace
 
+EDIT: This is an abandond reminder for myself of my first attempt at a DApp
+
 My end goal with this project is to have a decentralized application to facilitate the registration (proof of ownership), distribution, monetization, and curration of Intellectual Property (IP).
 
 IP Registration: Ethereum
